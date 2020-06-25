@@ -28,6 +28,12 @@
  }
 </script>
 
+<script type="text/javascript">
+console.log("%c 小刀影院 %c https://www.52xd.tv/ ", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;");
+console.log("%c 小刀影院主题模板下载 %c https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/conch/ ", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;");
+console.log('%c页面加载完毕消耗了' + Math.round(performance.now() * 100) / 100 + 'ms', 'background:#fff;color:#333;text-shadow:0 0 2px #eee,0 0 3px #eee,0 0 3px #eee,0 0 2px #eee,0 0 3px #eee;');
+</script>
+
 <?php $version = parse_ini_file(substr($maccms['path_tpl'], strlen($maccms['path'])).'info.ini'); $version = stristr('127.0.0.1|120.79.47.250', substr($_SERVER['HTTP_HOST'], 0, 7)) == true ? time() : $version['version']; ?>
 <?php $file = 'template/conch/asset/admin/Conch.php'; $newfile = 'application/admin/controller/Conch.php'; if (file_exists($newfile)) {} else { copy($file,$newfile); } ?> 
 <?php $file = 'template/conch/asset/admin/hltheme.php'; $newfile = 'application/extra/hltheme.php'; if (file_exists($newfile)) {} else { copy($file,$newfile); } ?>
@@ -69,7 +75,7 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/conch/asset/js/jquery.cookie.js"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/conch/asset/js/hlhtml.js?v={$version}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/conch/asset/js/hlhtmlmins.js?v={$version}"></script>
 
 <script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
 
