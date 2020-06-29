@@ -1,0 +1,51 @@
+<script type="text/javascript">
+<?php if($player['dp']['last']>0){ ?>
+        var cookie = {
+          'set': function(name, value, days) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000);
+            var arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
+            document.cookie = name + '=' + escape(value) + ';path=/;expires=' + exp.toUTCString();
+          },
+          'get': function(name) {
+            var arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
+            if (arr != null) return unescape(arr[2]);
+          },
+          'put': function(urls) {
+            var cookie = urls.replace(/[^a-z]+/ig, '');
+            var cookie = cookie.substring(cookie.length - 32);
+            return cookie;
+          }
+        }
+        dp.on('loadeddata',function() {
+          cookie.get(urls) ? dp.seek(cookie.get(urls)) : dp.notice("视频已就绪");
+          dp.on('timeupdate',function() {
+            if (cookie) cookie.set(urls, dp.video.currentTime, 30);
+          });
+        });
+<?php } if($player['dp']['next']>0){ ?>
+        dp.on('ended',function() {
+          dp.notice("视频播放已结束");
+          <?php if($player['dp']['next']>0){ ?>if (jump != '') {
+            top.location.href = jump;
+          }<?php } ?>
+        });
+<?php } ?>
+</script>
+
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279013674'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279013674%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?aa94b05365e2686b0d54ffaa5919d68d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script>
+console.log("%c 小刀影院DPlay播放器 官方正版！", "color: #fadfa3; background: #030307; padding:5px 0;");
+console.log("%c 小刀影院DPlay播放器下载 %c https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/bofangqi/DPlay/ ", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;");
+console.log('%c页面加载完毕消耗了' + Math.round(performance.now() * 100) / 100 + 'ms', 'background:#fff;color:#333;text-shadow:0 0 2px #eee,0 0 3px #eee,0 0 3px #eee,0 0 2px #eee,0 0 3px #eee;');
+</script>

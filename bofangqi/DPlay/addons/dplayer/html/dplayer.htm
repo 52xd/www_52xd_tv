@@ -1,0 +1,76 @@
+<?php include "header.htm"; ?>
+<body>
+<div id="video"></div>
+<div id="stats"></div>
+<script type="text/javascript">
+var urls = "<?php echo $url;?>";
+var jump = "<?php echo $jump;?>";
+if(urls.indexOf(".m3u8") > 0){ 	
+	var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;	
+	var type = 'customHls';
+	}
+	else {
+	var type = 'normal';
+	}
+var dp = new DPlayer({
+    container: document.getElementById('video'),
+    theme: '#4C8FE8', 
+    volume: 0.8,<?php
+    echo $player['logo']['status']?'logo:"'.$player['logo']['url'].'",':'';
+	echo $player['dp']['auto']?'autoplay: true,':'autoplay: false,';?>
+    video: {
+	    url: urls,<?php echo $player['pre']['status']?'pic: "'.$player['pre']['url'].'",':'';?>type: 'auto',
+		defaultQuality: 0,
+            type: type,
+            customType: {
+                'customHls': function (video, player) {
+                    const hls = new Hls({
+                        debug: false,
+                        p2pConfig: {
+                            logLevel: true,
+                            live: false,        // 如果是直播设为true
+                        }
+                    });
+                    hls.loadSource(video.src);
+                    hls.attachMedia(video);
+                    hls.p2pEngine.on('stats', function (stats) {
+                        _totalP2PDownloaded = stats.totalP2PDownloaded;
+                        _totalP2PUploaded = stats.totalP2PUploaded;
+                        updateStats();
+                    }).on('peerId', function (peerId) {
+                        _peerId = peerId;
+                    }).on('peers', function (peers) {
+                        _peerNum = peers.length;
+                        updateStats();
+                    });
+
+                }
+            }
+	},	
+        highlight: [
+        {
+            text: '提示：点击下方状态栏可以发送字幕',
+            time: 120,
+        },
+        {
+            text: '警告：请不要相信视频中任何广告与字幕',
+            time: 600,
+        },
+		]
+	<?php if($player['copyright']['status']>0){?>,contextmenu: [{text: "<?php echo $player['copyright']['content'];?>",link: "<?php echo $player['copyright']['url'];?>"}]<?php } ?>
+});
+function updateStats() {
+        var text = '【小刀影院】P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
+            + 'MB 已分享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 连接节点' + _peerNum + '个';
+        document.getElementById('stats').innerText = text;
+    }
+dp.on("fullscreen",function() {
+    dp.notice("全屏已开启");
+});
+dp.on("fullscreen_cancel",function() {
+    dp.notice("全屏已关闭");
+});
+</script>
+<?php include "foot.htm"; ?>
+  </body>
+</html>
