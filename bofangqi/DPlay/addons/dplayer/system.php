@@ -89,7 +89,7 @@ require($config);
             <td colspan="3" style="color:red;">超仿bilibili播放器 调用接口：https://<?php echo $_SERVER['HTTP_HOST'];?>/v/?url=</td></tr>
           <tr>
 		  <tr>
-            <td colspan="3" style="color:red;">全网官方资源播放器 调用接口：https://<?php echo $_SERVER['HTTP_HOST'];?>/jiexi/?url=</td></tr>
+            <td colspan="3" style="color:red;">全网官方资源播放器 调用接口：https://<?php echo $_SERVER['HTTP_HOST'];?>/addons/jiexi/?url=</td></tr>
           <tr>
             <td colspan="3">请务必尊重知识产权，严格保证不恶意传播产品源码、不得直接对源码进行二次转售或倒卖等。一经发现，我们有权利终止你在我方购买的所有源码的售后技术支持。</td></tr>
         </tbody>
