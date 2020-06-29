@@ -167,8 +167,8 @@ var _hmt = _hmt || [];
 })();
 </script>
 <script>
-console.log("%c 小刀影院播放器 v2.0 官方正版！", "color: #fadfa3; background: #030307; padding:5px 0;");
-console.log("%c 小刀影院播放器下载 %c https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/bofangqi/AiBlog/ ", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;");
+console.log("%c 小刀影院超仿bilibili播放器 v2.0 官方正版！", "color: #fadfa3; background: #030307; padding:5px 0;");
+console.log("%c 小刀影院超仿bilibili播放器下载 %c https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/bofangqi/AiBlog/ ", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;");
 console.log('%c页面加载完毕消耗了' + Math.round(performance.now() * 100) / 100 + 'ms', 'background:#fff;color:#333;text-shadow:0 0 2px #eee,0 0 3px #eee,0 0 3px #eee,0 0 2px #eee,0 0 3px #eee;');
 </script>
 </body>
