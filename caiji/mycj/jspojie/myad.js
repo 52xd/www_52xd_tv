@@ -1,7 +1,7 @@
 var ads = {
 	'advs': {
-		'head': '萌芽采集插件',
-		'tips': '由萌芽模板网收集整理提供，数据均来源于资源站，本插件不对资源站提供的数据负责！',
+		'head': '小刀资源采集插件',
+		'tips': '由小刀影院收集破解整理提供，数据均来源于资源站，本插件不对资源站提供的数据负责！',
 		'rows': [{
 			'urls': 'https://yun.vrecf.com/user/reg.html',
 			'tips': '<b style="color:#01AAED">『天翼网盘』解析 视频超清无水印解析</b>',
@@ -127,7 +127,7 @@ layui.use('layer', function(){
            layer.close(tongzhi); 
 		   comm.cookie.set('tongzhi',1,1);
         });	*/
-        var tongzhi = layer.confirm('<div style="padding:10px 10px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p>1、腾讯云618云聚惠年中大促活动又来了，<b style="color:red;">云服务器最低1核2G首年95元</b>，对于想搭建网站或者挂一些软件的小伙伴来说可以考虑入手一台！<a href="http://t.cn/A62f8ubz" target="_blank" class="layui-btn layui-btn-xs layui-btn-normal" style="text-indent: 0;">查看腾讯云618活动</a></p><p>2、阿里云618活动低至0.9折，<b style="color:red;">云服务器最低1核2G首年91.8元</b>，买了做挂机宝或者入门搭建网站练手都不错！<a href="https://www.aliyun.com/activity/618/index?userCode=97jncowc" target="_blank" class="layui-btn layui-btn-xs layui-btn-normal" style="text-indent: 0;">查看阿里云618活动</a></p></div>', {
+        var tongzhi = layer.confirm('<div style="padding:10px 10px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p>1、小刀影院 - 在线免费观看全网VIP超清影视，无需付费即可看全网各大影视平台超清资源。<b style="color:red;">会员免费注册，可看羞羞视频哦！</b><a href="https://www.52xd.tv/" target="_blank" class="layui-btn layui-btn-xs layui-btn-normal" style="text-indent: 0;">点击访问官网</a></p></div>', {
           title:'活动通知', 
 		  btn:['关闭'],
 		  offset: 'auto',

@@ -183,7 +183,7 @@ $v = date('H').ceil((date('i')/ 10));
 <script type="text/javascript" charset="utf-8" src="./js/md5.js"></script>
 <script type="text/javascript" charset="utf-8" src="./js/md5.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="./jspojie/main.min.js?v=<?php echo $v; ?>"></script>
-<script type="text/javascript" charset="utf-8" src="./js/myad.js?v=<?php echo $v; ?>"></script>
+<script type="text/javascript" charset="utf-8" src="./jspojie/myad.js?v=<?php echo $v; ?>"></script>
 <?php if(count($faves)>0){echo '<script type="text/javascript" src="./cache/faves.php?v='.time().'"></script>'.chr(10);}?>
 <script type="text/javascript" charset="utf-8" src="./js/data.js?v=<?php echo $v; ?>"></script>
 <script type="text/javascript" charset="utf-8" src="./jspojie/mycj.min.js?v=<?php echo $ver; ?>"></script>
