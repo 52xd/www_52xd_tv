@@ -1,0 +1,198 @@
+<?php
+	include "./addons/collect/install/mubanfz/config/config.php";
+	include "./addons/collect/install/mubanfz/html/common.html";
+?>
+<?php
+if($Far['mengqing']['snow']['status'] == 1){
+	include "./addons/collect/install/mubanfz/html/snow_mengqing.html";
+} ?>
+
+<!--自动弹窗代码部分-->
+<div id="Far_mengqing" class="Far_cox" style="display:none">
+<div class="Far_tc">
+	<div class="Far_tc1">
+		<?php echo $Far['mengqing']['title'];?>
+		<br />
+	</div>
+	<div class="content_mengqing" >
+		<?php
+			if ($Far['mengqing']['type'] == 1) {
+				echo '<img src="' .$Far['mengqing']['content']['image']. '" width="60%" />';	
+			} elseif ($Far['mengqing']['type'] == 2) { 
+				echo '<span style="color:red">' .$Far['mengqing']['content']['text']. '</span>';
+			} elseif ($Far['mengqing']['type'] == 3) {
+				echo '<img src="' .$Far['mengqing']['content']['image']. '" width="50%" />';
+				echo '<br/>';
+				echo '<span style="color:red">' .$Far['mengqing']['content']['text']. '</span>';
+			}
+		?>
+	</div>
+	<div class="Far_redbox">
+		<div class="Far_buttonred Far_mar">
+			<input type="submit" value="<?php echo $Far['mengqing']['leftbutton']['name'];?>" class="btn_mengqing" onClick="leftUrl();jQuery(&#39;.Far_cox&#39;).hide()">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" value="<?php echo $Far['mengqing']['rightbutton']['name'];?>" class="btn_mengqing" onclick="rightUrl();jQuery(&#39;.Far_cox&#39;).hide()"> 
+		</div>	
+	</div>
+</div>	
+</div>
+
+
+<!--手动弹窗代码部分-->
+<div id="Far_Hmengqing" class="Far_cox" style="display:none">
+<div class="Far_tc">
+	<div class="Far_tc1">
+		<?php echo $Far['Hmengqing']['title'];?>
+		<br />
+	</div>
+	<div class="content_mengqing" >
+		<?php
+			if ($Far['Hmengqing']['type'] == 1) {
+				echo '<img src="' .$Far['Hmengqing']['content']['image']. '" width="60%" />';	
+			} elseif ($Far['Hmengqing']['type'] == 2) { 
+				echo '<span style="color:red">' .$Far['Hmengqing']['content']['text']. '</span>';
+			} elseif ($Far['Hmengqing']['type'] == 3) {
+				echo '<img src="' .$Far['Hmengqing']['content']['image']. '" width="50%" />';
+				echo '<br/>';
+				echo '<span style="color:red">' .$Far['Hmengqing']['content']['text']. '</span>';
+			}
+		?>
+	</div>
+	<div class="Far_redbox">
+		<div class="Far_buttonred Far_mar">
+			<input type="submit" value="<?php echo $Far['Hmengqing']['leftbutton']['name'];?>" class="btn_mengqing" onClick="leftUrlH();jQuery(&#39;.Far_cox&#39;).hide()">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" value="<?php echo $Far['Hmengqing']['rightbutton']['name'];?>" class="btn_mengqing" onclick="rightUrlH();jQuery(&#39;.Far_cox&#39;).hide()"> 
+		</div>	
+	</div>
+</div>	
+</div>
+
+<script type="text/javascript">
+	(function(){
+		var phoneWidth = parseInt(window.screen.width),
+			phoneScale = phoneWidth/640,
+			ua = navigator.userAgent;
+		if (/Android (\d+\.\d+)/.test(ua)){
+			var version = parseFloat(RegExp.$1);
+			if(version > 2.3){
+				// 判断安卓屏幕宽度
+				document.write('<meta name="viewport" content="width=device-width, initial-scale=0.75, minimum-scale=0.75, maximum-scale=0.75, user-scalable=no">');
+			}
+		} else {
+			// 判断ios屏幕宽度
+			document.write('<meta name="viewport" content="width=device-width, initial-scale=0.76, minimum-scale=0.76, maximum-scale=0.76, user-scalable=no">');
+		}
+	})();
+	
+	// 自动左按钮事件
+	function leftUrl(){
+		if('<?php echo $Far['mengqing']['leftbutton']['url'];?>'!=''){
+			window.location.href='<?php echo $Far['mengqing']['leftbutton']['url'];?>'
+		}
+	}
+	// 自动右按钮事件
+	function rightUrl(){
+		if('<?php echo $Far['mengqing']['rightbutton']['url'];?>'!=''){
+			window.location.href='<?php echo $Far['mengqing']['rightbutton']['url'];?>'
+		}
+	}
+	// 自动弹窗显示
+	function Far_openmengqing(){
+		var div=document.getElementById("Far_mengqing");
+		div.style.display="block"
+	}
+	
+	
+	// 手动弹窗左按钮事件
+	function leftUrlH(){
+		if('<?php echo $Far['Hmengqing']['leftbutton']['url'];?>'!=''){
+			window.location.href='<?php echo $Far['Hmengqing']['leftbutton']['url'];?>'
+		}
+	}
+	// 手动弹窗右按钮事件
+	function rightUrlH(){
+		if('<?php echo $Far['Hmengqing']['rightbutton']['url'];?>'!=''){
+			window.location.href='<?php echo $Far['Hmengqing']['rightbutton']['url'];?>'
+		}
+	}
+	// 手动弹窗显示
+	function Far_openHmengqing(){
+		var div=document.getElementById("Far_Hmengqing");
+		div.style.display="block"
+	}
+	
+	
+	// 判断终端类型
+	if (browser.versions.mobile) {
+		 // 判断是否是移动端打开 
+	        if(browser.versions.android && !browser.versions.bsl){
+	            // 在安卓端打开
+	            if('<?php echo $Far['mengqing']['terminal'];?>'.indexOf('android')!==-1){
+	            	cookieController();
+	            }
+	    	}
+	        if (browser.versions.ios) {
+	            // 在ios端打开
+	            if('<?php echo $Far['mengqing']['terminal'];?>'.indexOf('ios')!==-1){
+	            	cookieController();
+	            }
+	        }
+	        if (browser.versions.weixin) {
+	            // 在微信端打开
+	            if('<?php echo $Far['mengqing']['terminal'];?>'.indexOf('weixin')!==-1){
+	            	cookieController();
+	            }
+	        }
+	        if (browser.versions.qq) {
+	            // 在QQ端打开
+	            if('<?php echo $Far['mengqing']['terminal'];?>'.indexOf('qq')!==-1){
+	            	cookieController();
+	            }
+	        }
+	        if (browser.versions.bsl) {
+	            // 在变色龙app打开
+	            if('<?php echo $Far['mengqing']['terminal'];?>'.indexOf('bsl')!==-1){
+	            	cookieController();
+	            }
+	        }
+	}else{
+		// 判断是否是pc端打开
+	    if('<?php echo $Far['mengqing']['terminal'];?>'.indexOf('pc')!==-1){
+	    	cookieController();
+	    }
+	}
+	
+	
+	function cookieController(){
+		// cookie控制弹窗
+		if('<?php echo $Far['mengqing']['status'];?>'==1){
+			if('<?php echo $Far['mengqing']['interval']['type'];?>'==0){
+		    	Far_openmengqing();
+			}
+			if('<?php echo $Far['mengqing']['interval']['type'];?>'==1){
+				// 读Cookie
+		    	var value = checkCookie('Far_mengqing_cookie');
+		    	// 无cookie时弹出
+		    	if(value==false){
+		    		Far_openmengqing();
+		    		// 设置cookie
+		    		setCookie('Far_mengqing_cookie','time','<?php echo $Far['mengqing']['interval']['time'];?>');
+		    	}
+			}
+			if('<?php echo $Far['mengqing']['interval']['type'];?>'==2){
+				// 读Cookie
+		    	var value = checkCookie('Far_mengqing_cookie');
+		    	// 无cookie时弹出
+		    	if(value==false){
+		    		Far_openmengqing();
+		    		// 设置cookie
+		    		var number = '<?php echo $Far['mengqing']['interval']['number'];?>';
+		    		var expire = (24*60)/number ;
+		    		setCookie('Far_mengqing_cookie','number',expire);
+		    	}
+			}
+		} 
+	}
+</script>
+<link rel="stylesheet" type="text/css" href="//tu.xygzs.top/caiji/tanchuang.css" >

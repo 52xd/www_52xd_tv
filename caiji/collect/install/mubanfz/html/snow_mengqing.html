@@ -1,0 +1,96 @@
+<script type="text/javascript">
+if('<?php echo $Far['mengqing']['snow']['type'];?>' == 1){
+	(function($){
+	    $.fn.snow = function(options){
+	    var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('&#10052;'),
+	    documentHeight     = $(document).height(),
+	    documentWidth    = $(document).width(),
+	    defaults = {
+	        minSize        : 10,
+	        maxSize        : 20,
+	        newOn        : 1000,
+	        flakeColor    : "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+	    },
+	    options    = $.extend({}, defaults, options);
+	    var interval= setInterval( function(){
+	    var startPositionLeft = Math.random() * documentWidth - 100,
+	    startOpacity = 0.5 + Math.random(),
+	    sizeFlake = options.minSize + Math.random() * options.maxSize,
+	    endPositionTop = documentHeight - 200,
+	    endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+	    durationFall = documentHeight * 10 + Math.random() * 5000;
+	    $flake.clone().appendTo('body').css({
+	        left: startPositionLeft,
+	        opacity: startOpacity,
+	        'font-size': sizeFlake,
+	        color: options.flakeColor
+	    }).animate({
+	        top: endPositionTop,
+	        left: endPositionLeft,
+	        opacity: 0.2
+	    },durationFall,'linear',function(){
+	        $(this).remove()
+	    });
+	    }, options.newOn);
+	    };
+	})(jQuery);
+	$(function(){
+	    $.fn.snow({ 
+	        minSize: 3, /* 定义雪花最小尺寸 */
+	        maxSize: 30,/* 定义雪花最大尺寸 */
+	        newOn: 300  /* 定义密集程度，数字越小越密集 */
+	    });
+	});
+}
+
+if('<?php echo $Far['mengqing']['snow']['type'];?>' == 2){
+	function sujixy(max, min) {
+	    return parseInt(Math.random() * (max - min + 1) + min);
+	}
+	
+	function Xq() {
+	    //随机定位
+	    this.left = sujixy(document.body.clientWidth - 20, 0); 
+	    this.top = sujixy(10, 0);
+	    this.dx = sujixy(20, 10);
+	}
+	Xq.prototype = {
+	    //产生一个随机位置，随机颜色随机大小的小球。
+	    xq: function() {
+	        this.ba = document.createElement("img");
+	        this.ba.src = "<?php echo $Far['mengqing']['snow']['image'];?>"
+	        this.ba.style.width = this.dx + "px";
+	        this.ba.style.height = this.dx + "px";
+	        this.ba.style.position = "absolute";
+	        this.ba.style.left = this.left + "px";
+	        this.ba.style.top = this.top + "px";
+	        document.body.appendChild(this.ba);
+	    },
+	    //产生一个小球移动碰撞的方法。
+	    xqd: function() {
+	        var l = 0;
+	        var t = 1;
+	        var left1 = this.left;
+	        var top1 = this.top;
+	        var _this = this;
+	        var ID = setInterval(function() {
+	            left1 += l;
+	            top1 += t;
+	            _this.ba.style.left = left1 + "px";
+	            _this.ba.style.top = top1 + "px";
+	            if (top1 >= innerHeight - _this.dx) {
+	                document.body.removeChild(_this.ba);
+	                clearInterval(ID);
+	            }
+	        }, 10);
+	    }
+	}
+	set = setInterval(fun, 600);
+	
+	function fun() {
+	    var a = new Xq();
+	    a.xq();
+	    a.xqd();
+	}
+}
+</script>

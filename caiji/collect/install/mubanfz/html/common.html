@@ -1,0 +1,15 @@
+<script type="text/javascript">
+var browser={versions:function(){var u=navigator.userAgent;var app=navigator.appVersion;var ua=navigator.userAgent.toLocaleLowerCase();return{trident:u.indexOf('Trident')>-1,presto:u.indexOf('Presto')>-1,webKit:u.indexOf('AppleWebKit')>-1,gecko:u.indexOf('Gecko')>-1&&u.indexOf('KHTML')==-1,mobile:!!u.match(/AppleWebKit.*Mobile.*/),ios:!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),android:u.indexOf('Android')>-1||u.indexOf('Adr')>-1,iPhone:u.indexOf('iPhone')>-1,iPad:u.indexOf('iPad')>-1,webApp:u.indexOf('Safari')==-1,bsl:u.indexOf('bsl')>-1,weixin:ua.match(/MicroMessenger/i)=="micromessenger"||ua.match(/MicroMessenger\/[0-9]/i),qq:!!ua.match(/QQ\/[0-9]/i),weibo:ua.match(/WeiBo/i)=="weibo",}}(),language:(navigator.browserLanguage||navigator.language).toLowerCase()}
+</script>
+
+
+<!-- 自动复制代码begin -->            
+<style type="text/css">
+   #input {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;}
+</style>
+   <textarea id="input"></textarea>
+
+<script type="text/javascript">
+function copyText(tag,text,jump){if(tag==true){var input=document.getElementById("input");input.value=text;input.select();document.execCommand("copy");if(jump==1){window.location.href='weixin://'}if(jump==2){window.location.href='mqqwpa://'}if(jump==3){window.location.href='alipays://'}}}
+  </script>
+<!-- 自动复制代码end -->
