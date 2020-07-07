@@ -285,7 +285,7 @@ a:hover.swiper-button-next,a:hover.swiper-button-prev{color: #fff;background:#ff
 .art_sider_row{float: right;width: 30%;padding-left: 1rem;}
 .art_navlist{overflow: hidden; display: block; background-color: #f8f8f8; padding: 0.25rem 0.45rem;margin: 0.5rem 0 0; border-radius: 4px;}
 .art_navlist.nav_fixed{position: fixed;top:1.25rem;z-index: 999;}
-.art_navlist li{text-align: right;position: relative; margin: 0.25rem 0;}
+.art_navlist li{text-align: right;position: relative; margin: -0.21rem 0;}
 .art_navlist li a{display: inline-block;font-size: 0.4rem; margin: 0.05rem 0; padding: 0 0.25rem; line-height: 0.7rem;  white-space: nowrap;}
 .art_navlist li.active a{position: relative; color: #ff5f00; font-weight: 700;}
 .art_navlist .wx_ewm {text-align: center;padding: 0.2rem 0;border-top: 1px solid #f1f1f1;}
