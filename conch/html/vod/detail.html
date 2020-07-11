@@ -79,6 +79,7 @@
 				  <input type="radio" id="tab2" name="tab-control"> 
 				  <ul  class="title_nav">
 					<li class="tab-det" title="剧情介绍"><label for="tab1" role="button"><span>剧情介绍</span></label></li>
+					<li class="tab-det" title="我要评分"><label for="tab2" role="button"><span>我要评分</span></label></li>
 				  </ul>
 				  <div class="content">
 					<section>
@@ -90,6 +91,12 @@
 						<div class="content_desc full_text clearfix" style="display:none;">
 							<span>{$obj.vod_content|mac_filter_html|mac_default='暂无'}</span>
 							<a href="javascript:void(0);" class="hidden_btn" onclick="hidediv(this);"><i class="iconfont">&#xe628;</i><em class="hidden_xs">&nbsp;收起全部</em></a>
+						</div>
+					</section>
+					<section>
+					  <h2>我要评分</h2>
+						<div class="content_desc clearfix">
+							{include file="widget/star2"}
 						</div>
 					</section>
 				  </div>

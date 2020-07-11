@@ -127,6 +127,16 @@
 							
 							{if condition="$obj['type_id_1']==$conch['theme']['type']['zb']"}{else}
 							<div class="play_text">
+							    <p>今日点击：<span class="mac_hits hits_day" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}"" data-type="hits_day"></span>
+							    <span class="split_line"></span>
+							    本周点击：<span class="mac_hits hits_week" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}"" data-type="hits_week"></span>
+							    <span class="split_line"></span>
+							    本月点击：<span class="mac_hits hits_month" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}"" data-type="hits_month"></span>
+							    <span class="split_line"></span>
+							    总点击：<span class="mac_hits hits" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}"" data-type="hits"></span>
+								</p>
+							</div>
+							<div class="play_text">
 							    <p>
 									{if condition="$obj.vod_score gt 0"}
 									<span class="text_score"></span>
