@@ -43,7 +43,7 @@ $user = array(
 
 		'lolink' => '', //用户设置防盗跳转,设置防盗验证时间lotime参数后才生效（设置顶部防盗链域名后生效，如果其他人盗用，会在指定时间跳转）  //填写实例:'lolink' => 'https://www.8090.la', 		
 
-		'cklogo' => 'https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/bofangqi/jiexi/logo.png', //ckplayer播放器右上角logo标志,请填写完整绝对地址.例如:https://www.8090.la/logo.png ,不用请留空
+		'cklogo' => 'https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/bofangqi/jiexi/logo2.png', //ckplayer播放器右上角logo标志,请填写完整绝对地址.例如:https://www.8090.la/logo.png ,不用请留空
         
         'ckfont' => '', //ckplayer播放器设置控制栏上方漂浮字体，不需要请留空
         
