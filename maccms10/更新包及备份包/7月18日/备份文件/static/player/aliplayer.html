@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <title>小刀影院 - 阿里云播放器•超强记忆播放</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/maccms10/static/player/aliplayer/aliplayer-min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/maccms10/static/player/aliplayer/aliplayer-min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/maccms10/static/player/aliplayer/aliplayercomponents.min.js"></script>
+    <style type="text/css">
+	body,html{background-color:#000;padding: 0;margin: 0;width:100%;height:100%;}
+    .b-videobottom {width:100%;height:23px;background:#1D1D1D;position:fixed;text-align:center;left:0;z-index:100;}
+    .b-adicon {font-size:12px;color:#555;line-height:23px;display:none;}  
+    #aliplayer{width:100%;height:100%;padding:0;margin:0;display:block;}
+    </style>
+</head>
+<body>
+<div class="b-videobottom">
+   <span class="b-adicon" style="display: inline;">广告 > 此播放器，支持记忆播放。</span>
+</div>   
+<div id="aliplayer" class="prism-player"></div>
+<script type="text/javascript">  
+var player = new Aliplayer({
+    "id": "aliplayer",
+    "source": parent.MacPlayer.PlayUrl,
+    width: "100%",
+    height: "100%",
+	autoplay: true,//是否自动播放
+    preload: true,//播放器自动加载
+    rePlay: false,//是否重播
+	playsinline: false,//H5是否内置播放
+	useH5Prism: false,//强制H5播放器
+    isLive: false,//是否直播
+	autoPlayDelay: 0,
+	autoPlayDelayDisplayText: '请稍待正在加载...',
+	components: [{
+       name: 'MemoryPlayComponent',
+       type: AliPlayerComponent.MemoryPlayComponent,
+       args: [true]
+    }],
+skinLayout:[
+    {name: "bigPlayButton",align:"blabs",x:30,y:80},
+    {name:"H5Loading",align:"cc"},
+    {name:"errorDisplay",align:"tlabs",x:0,y:0},
+  	{name:"infoDisplay"},
+  	{name:"tooltip",align:"blabs",x:0,y:56},
+  	{name:"controlBar",align:"blabs",x:0,y:0,
+    "children":[
+       {name:"progress",align:"blabs",x:0,y:44},
+       {name:"playButton",align:"tl",x:15,y:12},
+       {name:"timeDisplay",align:"tl",x:10,y:7},
+       {name:"fullScreenButton",align:"tr",x:10,y:12},
+       {name:"setting",align:"tr",x:15,y:12},
+       {name:"volume",align:"tr",x:5,y:10}
+   ]}
+]}, 
+function (player) {
+      console.log("The player is created");
+  }
+ );
+try{
+	//document.getElementById('aliplayer').style.height = parent.MacPlayer.Height + 'px';
+}
+catch(e){}  
+</script>
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279013674'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1279013674%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+<br />
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?aa94b05365e2686b0d54ffaa5919d68d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+console.log("%c 小刀影院阿里云播放器 官方正版！", "color: #fadfa3; background: #030307; padding:5px 0;");
+console.log("%c 小刀影院阿里云播放器下载 %c https://cdn.jsdelivr.net/gh/52xd/www_52xd_tv/maccms10/static/player/aliplayer.html ", "color: #fadfa3; background: #030307; padding:5px 0;", "background: #fadfa3; padding:5px 0;");
+console.log('%c页面加载完毕消耗了' + Math.round(performance.now() * 100) / 100 + 'ms', 'background:#fff;color:#333;text-shadow:0 0 2px #eee,0 0 3px #eee,0 0 3px #eee,0 0 2px #eee,0 0 3px #eee;');
+</script>
+</body>
+</html>
